@@ -1,0 +1,7 @@
+FROM nginx:1.10.1-alpine
+COPY src/html/ /usr/share/nginx/html
+
+#pass in array for executing command
+CMD ["nginx", "-g", "daemon off;"]
+#daemon off is to have nginx run in the foreground, ie as if ran from terminal, and allows you to see outputs & errors
+#which is mean to be done since one container is mean to be on process
